@@ -26,6 +26,7 @@ public class User extends Timestamped {
     @Column(unique = true)
     private String email;
     private String password;
+    // User 테이블에 nickname 컬럼을 추가해주세요.
     private String nickname;
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
