@@ -53,6 +53,7 @@ public class TodoController {
         return ResponseEntity.ok(todoService.getTodo(todoId));
     }
 
+    // 10 검색기능
     @GetMapping("/todos/search")
     public Page<TodoSearchResponse> searchTodos(
         @RequestParam(required = false) String title,

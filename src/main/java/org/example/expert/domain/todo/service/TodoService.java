@@ -89,6 +89,7 @@ public class TodoService {
         );
     }
 
+    // 10 검색기능
     public Page<TodoSearchResponse> searchTodos(String title, String nickname, LocalDateTime startDate, LocalDateTime endDate, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         return todoRepository.searchTodos(title, nickname, startDate, endDate, pageable);

@@ -45,6 +45,7 @@ public class TodoRepositoryCustomImpl implements TodoRepositoryCustom{
 		);
 	}
 
+	// 10 검색기능
 	@Override
 	public Page<TodoSearchResponse> searchTodos(String title, String nickname, LocalDateTime startDate, LocalDateTime endDate, Pageable pageable) {
 		QTodo todo = QTodo.todo;
