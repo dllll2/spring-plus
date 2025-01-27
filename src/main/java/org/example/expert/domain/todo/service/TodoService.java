@@ -24,15 +24,14 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+// Level 1) 코드 개선 퀴즈 - @Transactional의 이해
+@Transactional
 public class TodoService {
 
     private final TodoRepository todoRepository;
     private final UserRepository userRepository;
     private final WeatherClient weatherClient;
 
-    // Level 1) 코드 개선 퀴즈 - @Transactional의 이해
-    @Transactional
     public TodoSaveResponse saveTodo(AuthUser authUser, TodoSaveRequest todoSaveRequest) {
         User user = userRepository.findById(authUser.getId())
             .orElseThrow(() -> new InvalidRequestException("User not found"));
