@@ -28,6 +28,8 @@ public class TodoRepositoryCustomImpl implements TodoRepositoryCustom{
 	public TodoRepositoryCustomImpl(EntityManager entityManager) {
 		this.queryFactory = new JPAQueryFactory(entityManager);
 	}
+
+	// QueryDSL
 	@Override
 	public Optional<Todo> findByIdWithUser(Long todoId) {
 		QTodo todo = QTodo.todo;
