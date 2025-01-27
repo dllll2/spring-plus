@@ -56,6 +56,7 @@ public class JwtUtil {
         return extractClaims(token).get("email", String.class);
     }
 
+    // 토큰에서 닉네임 추출?
     public String extractNickName(String token) {
         return extractClaims(token).get("nickName", String.class);
     }

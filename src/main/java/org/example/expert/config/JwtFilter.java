@@ -58,6 +58,7 @@ public class JwtFilter implements Filter {
 
         Long userId = jwtUtil.extractUserId(jwt);
         String email = jwtUtil.extractEmail(jwt);
+        // 토큰에서 닉네임 추출?
         String nickName = jwtUtil.extractNickName(jwt);
         String role = jwtUtil.extractRoles(jwt);
 
