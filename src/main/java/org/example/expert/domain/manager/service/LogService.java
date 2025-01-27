@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
+// 11 트랜잭션 심화 LOG
 @Service
 @RequiredArgsConstructor
 public class LogService {

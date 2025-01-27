@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+// 11 트랜잭션 심화 LOG
 @Getter
 @Entity
 @NoArgsConstructor
