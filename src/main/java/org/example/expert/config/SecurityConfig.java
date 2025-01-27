@@ -17,6 +17,7 @@ public class SecurityConfig {
 
 	private final JwtFilter jwtFilter;
 
+	// Spring Security
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
