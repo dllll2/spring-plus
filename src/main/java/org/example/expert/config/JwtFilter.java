@@ -8,7 +8,6 @@ import org.example.expert.domain.user.enums.UserRole;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import jakarta.servlet.Filter;
@@ -57,7 +56,6 @@ public class JwtFilter implements Filter {
             return;
         }
 
-        // 토큰에서 사용자 정보와 권한 추출
         Long userId = jwtUtil.extractUserId(jwt);
         String email = jwtUtil.extractEmail(jwt);
         String nickName = jwtUtil.extractNickName(jwt);
@@ -69,12 +67,12 @@ public class JwtFilter implements Filter {
             return;
         }
 
-        UserRole userRole = UserRole.valueOf(role);
+        UserRole userRole = UserRole.of(role);
 
         // AuthUser 생성
         AuthUser authUser = new AuthUser(userId, email, nickName, userRole);
 
-        User user = new User(nickName, "", Collections.singletonList(userRole::getRole));
+        //User user = new User(nickName, "", Collections.singletonList(userRole::getRole));
 
         SecurityContextHolder.getContext().setAuthentication(
             new UsernamePasswordAuthenticationToken(
